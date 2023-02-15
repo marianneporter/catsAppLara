@@ -1,4 +1,5 @@
 @import "@fortawesome/fontawesome-free/css/all.css";
+@import "/node_modules/flowbite-datepicker/dist/css/datepicker.min.css";
 
 @tailwind base;
 @tailwind components;
@@ -19,3 +20,4 @@
 .datepicker-element {
     @apply pl-10
 }
+
