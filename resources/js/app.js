@@ -1,7 +1,5 @@
 //import 'flowbite';
 import 'flowbite-datepicker'
-
-
 import 'flowbite/dist/datepicker.js';
 
 import Datepicker from 'flowbite-datepicker/Datepicker';
