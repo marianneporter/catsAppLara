@@ -9,7 +9,7 @@
         </header>
 
         <main class="mt-6">
-            <form method="post" action="">
+            <form method="post" action="" autocomplete="off">
 
                 <div class="mb-2">
                     <label class="block" for="colour">Cat's Name</label>

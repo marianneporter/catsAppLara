@@ -10,6 +10,6 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('flowbite/plugin', 'flowbite-datepicker/plugin')
+    require('flowbite/plugin')
   ],
 }
