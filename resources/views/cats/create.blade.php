@@ -22,6 +22,7 @@
 
             <form method="post" action="/cats" autocomplete="off" onsubmit="return formatCreateUpdateFields()">
                 @csrf
+
                 <div class="mb-2">
                     <label class="block" for="colour">Cat's Name</label>
                     <input type="text" id="name" name="name"
