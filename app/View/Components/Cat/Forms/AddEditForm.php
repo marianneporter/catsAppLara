@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class CatAddEditForm extends Component
+class AddEditForm extends Component
 {
     public $mode;
     public $method;
@@ -23,6 +23,6 @@ class CatAddEditForm extends Component
      */
     public function render()
     {
-        return view('components.cat-add-edit-form');
+        return view('components.cat.forms.add-edit-form');
     }
 }
