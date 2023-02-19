@@ -30,22 +30,7 @@
 
     </div>  
 
-    <div class="mb-2">
-        <label class="block" for="colour">Colour</label>
-      
-        <select id="colour" class="input-element px-2.5" name="colour"
-                value="{{old('colour')}}" >
-            <option hidden value="">Select Colour</option>
-            <option value="Black"  @selected(old('colour') == "Black")  >Black</option>
-            <option value="Ginger" @selected(old('colour') == "Ginger")>Ginger</option>
-            <option value="Grey"   @selected(old('colour') == "Grey")>Grey</option>
-            <option value="Black and White" @selected(old('colour') == "Black and White")>Black and White</option>
-        </select>
-        
-        @error('colour')  
-            <p class="text-red-500 text-xs mt-1">{{$message}}</p> 
-        @enderror   
-    </div>  
+    <x-cat.forms.select type="colour"></x-cat.forms.select>
 
     <div class="mb-2">
         <label class="block" for="fav_food" >Favourite Food</label>

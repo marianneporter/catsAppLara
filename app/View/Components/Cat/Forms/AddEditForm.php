@@ -1,14 +1,13 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Cat\Forms;
 
 use Illuminate\View\Component;
 
 class AddEditForm extends Component
 {
     public $mode;
-    public $method;
-   
+    public $method;   
 
     public function __construct($mode, $method)
     {
