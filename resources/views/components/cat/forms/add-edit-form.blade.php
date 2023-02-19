@@ -3,7 +3,7 @@
     @method($method)
 
     <div class="mb-2">
-        <label class="block" for="colour">Cat's Name</label>
+        <label class="block" for="name">Cat's Name</label>
         <input type="text" id="name" name="name"
                class="input-element px-2.5" placeholder="Cat's Name"
                value="{{old('name')}}">
@@ -32,21 +32,7 @@
 
     <x-cat.forms.select type="colour"></x-cat.forms.select>
 
-    <div class="mb-2">
-        <label class="block" for="fav_food" >Favourite Food</label>
-     
-        <select id="fav_food" class="input-element px-2.5" name="fav_food" value="{{old('fav_food')}}" >
-            <option  hidden value="">Select Favourite Food</option>
-            <option value="Fish" @selected(old('fav_food') == "Fish") >Fish</option>
-            <option value="Chicken" @selected(old('fav_food') == "Chicken") >Chicken</option>
-            <option value="Wet Cat Food" @selected(old('fav_food') == "Wet Cat Food")>Wet Cat Food</option>
-            <option value="Dry Cat Food" @selected(old('fav_food') == "Dry Cat Food")>Dry Cat Food</option>
-        </select>
-                            
-        @error('fav_food')  
-            <p class="text-red-500 text-xs mt-1">{{$message}}</p> 
-        @enderror
-    </div> 
+    <x-cat.forms.select type="fav_food"></x-cat.forms.select>
 
     <div class="mt-8 flex justify-around">                   
         <a href="#" class="btn bg-gray-500 text-white min-w-[10rem] py-5" >Back</a>
