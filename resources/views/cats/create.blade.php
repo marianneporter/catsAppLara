@@ -20,7 +20,7 @@
 
         <main class="mt-6">
 
-            <x-cat.forms.add-edit-form mode="Add" method="POST" />
+            <x-cat.forms.add-edit-form mode="Create" method="POST" />
 
         </main>
 
