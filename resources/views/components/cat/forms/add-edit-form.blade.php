@@ -1,4 +1,5 @@
-<form method="post" action="/cats" autocomplete="off" onsubmit="return formatCreateUpdateFields()">
+<form method="post" action="/cats" autocomplete="off" 
+      id="add-edit-form" onsubmit="return formatCreateUpdateFields()">
     @csrf
     @method($method)
 

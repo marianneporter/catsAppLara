@@ -1,6 +1,5 @@
-
-
 import './bootstrap';
+import { beforeSubmit, createDatepicker } from '../js/cats/create-update';
 
 //navbar toggle
 document.querySelector('#toggle-nav').addEventListener('click', () => {  
@@ -14,3 +13,16 @@ document.querySelector('#toggle-nav').addEventListener('click', () => {
         navDropdown.classList.add('-top-64');        
     }
 })
+
+//create-edit elements
+    const currentUrl  =  window.location.href;
+    if (currentUrl.includes('create' || 'edit')) {   
+        const datepickerEl = document.getElementById('datepickerId');
+        createDatepicker(datepickerEl);
+
+    const addEditForm = document.querySelector('#add-edit-form');
+
+    addEditForm.addEventListener('submit', beforeSubmit());
+}
+
+
