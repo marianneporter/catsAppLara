@@ -3,7 +3,7 @@
 namespace App\View\Components\Cat\Forms;
 
 use Illuminate\View\Component;
-use App\Models\Cat as CatModel;
+use App\Models\Cat;
 
 class AddEditForm extends Component
 {
@@ -21,12 +21,12 @@ class AddEditForm extends Component
        $this->mode = $mode;
        $this->method = $method;        
 
-       $this->colours = CatModel::$colours;
-       $this->favFoods = CatModel::$favFoods;      
+       $this->colours = Cat::$colours;
+       $this->favFoods = Cat::$favFoods;      
        
-       $this->colourTitle = CatModel::$propertyNames['colour'];
-       $this->favFoodTitle = CatModel::$propertyNames['fav_food'];
-       $this->dobTitle = CatModel::$propertyNames['dob'];
+       $this->colourTitle = Cat::$propertyNames['colour'];
+       $this->favFoodTitle = Cat::$propertyNames['fav_food'];
+       $this->dobTitle = Cat::$propertyNames['dob'];
     }
 
     /**
