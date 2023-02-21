@@ -14,6 +14,8 @@
         @enderror
     </div>
 
+    
+
     <x-common.form-elements.datepicker name="dob" :title="$dobTitle"  />
 
     <x-common.form-elements.select name="colour" :options="$colours" :title="$colourTitle" />   
