@@ -13,6 +13,7 @@ class AddEditForm extends Component
     public $colourTitle;
     public $favFoods;
     public $favFoodTitle;
+    public $dobTitle;
 
     public function __construct($mode, $method)
     {
@@ -25,6 +26,7 @@ class AddEditForm extends Component
        
        $this->colourTitle = CatModel::$propertyNames['colour'];
        $this->favFoodTitle = CatModel::$propertyNames['fav_food'];
+       $this->dobTitle = CatModel::$propertyNames['dob'];
     }
 
     /**

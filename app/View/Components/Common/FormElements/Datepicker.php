@@ -9,18 +9,21 @@ class Datepicker extends Component
     public $name;
     public $dispName;
     public $id;
+    public $title;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name)
+    public function __construct($name, $title)
     {
 
         $this->name = $name;
+        $this->title = $title;
         $this->dispName = 'disp_' . $name;
         $this->id = $name . 'DatepickerId';
-        //dd($this->name);
+      
     }
 
     /**
