@@ -15,13 +15,12 @@ document.querySelector('#toggle-nav').addEventListener('click', () => {
 })
 
 //create-edit elements
-    const currentUrl  =  window.location.href;
-    if (currentUrl.includes('create' || 'edit')) {   
-        const datepickerEl = document.getElementById('datepickerId');
-        createDatepicker(datepickerEl);
-
+const currentUrl  =  window.location.href;
+if (currentUrl.includes('create' || 'edit')) {   
+    const datepickerEl = document.getElementById('dobDatepickerId'); 
+    createDatepicker(datepickerEl);
     const addEditForm = document.querySelector('#add-edit-form');
-
+    
     addEditForm.addEventListener('submit', beforeSubmit());
 }
 

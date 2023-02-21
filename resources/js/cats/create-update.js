@@ -5,9 +5,9 @@ import Datepicker from 'flowbite-datepicker/Datepicker';
 import { dispDateToYYYYMMDD } from "../../js/dates";
 
 export const beforeSubmit = () => {
-    console.log('in before submit');
+  
     window.formatCreateUpdateFields = () => {          
-        const dateDispFormat = document.querySelector('#datepickerId').value;
+        const dateDispFormat = document.querySelector('#dobDatepickerId').value;
         const dob = document.querySelector('#dob');      
         dob.value=dispDateToYYYYMMDD(dateDispFormat);      
         return true;
@@ -30,6 +30,3 @@ export const createDatepicker = (datepickerEl) => {
         });            
     }     
 }
-
-
-
