@@ -9,7 +9,7 @@ export const beforeSubmit = () => {
     window.formatCreateUpdateFields = () => {          
         const dateDispFormat = document.querySelector('#dobDatepickerId').value;
         const dob = document.querySelector('#dob');      
-        dob.value=dispDateToYYYYMMDD(dateDispFormat);      
+        dob.value=dispDateToYYYYMMDD(dateDispFormat);  
         return true;
     }
 }
