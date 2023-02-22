@@ -23,5 +23,3 @@ if (currentUrl.includes('create' || 'edit')) {
     
     addEditForm.addEventListener('submit', beforeSubmit());
 }
-
-

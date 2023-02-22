@@ -8,12 +8,14 @@ use App\Models\Cat;
 class AddEditForm extends Component
 {
     public $mode;
-    public $method;   
+    public $method; 
     public $colours;
-    public $colourTitle;
     public $favFoods;
-    public $favFoodTitle;
+
+    public $nameTitle;
     public $dobTitle;
+    public $colourTitle;    
+    public $favFoodTitle;    
 
     public function __construct($mode, $method)
     {
@@ -24,9 +26,12 @@ class AddEditForm extends Component
        $this->colours = Cat::$colours;
        $this->favFoods = Cat::$favFoods;      
        
+       $this->nameTitle= Cat::$propertyNames['name'];
+       $this->dobTitle = Cat::$propertyNames['dob'];
        $this->colourTitle = Cat::$propertyNames['colour'];
        $this->favFoodTitle = Cat::$propertyNames['fav_food'];
-       $this->dobTitle = Cat::$propertyNames['dob'];
+      
+       
     }
 
     /**

@@ -17,10 +17,9 @@ class Cat extends Model
     public static $favFoods = [ 'Fish', 'Chicken', 'Wet Cat Food', 'Dry Cat Food'];
 
     public static $propertyNames = [
-        "name" => "Name",
+        "name" => "Cat's Name",
         "dob" => "Date of Birth",
         "colour" => "Colour",
         "fav_food" => "Favourite Food"
-    ];
-                               
+    ];                               
 }
