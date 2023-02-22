@@ -21,6 +21,11 @@ Route::get('/', [ CatController::class, 'index'] );
 Route::get('/cats/create', [CatController::class, 'create'])->name('cats.create');
 Route::post('/cats', [CatController::class, 'store'])->name('cats.store');
 
+
+
+// Route::get('/cats/{cat}/edit', [CatController::class, 'edit']);
+// Route::put('/cats/{listing}',  [CatController::class, 'update']);
+
 // Route::get('cats/{cat}', function (Cat $cat) {
 //     return view('cats\cat', [
 //         'cat' => $cat

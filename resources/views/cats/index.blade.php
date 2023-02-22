@@ -1,4 +1,5 @@
 <x-layout>
+    
     <div class="max-w-4xl mx-auto min-h-screen pt-28 px-16 bg-white ">
         <h1 class="text-3xl font-bold mb-5">Cats</h1>
         <a href={{ route('cats.create') }} class="btn bg-blue-500 text-white mr-5 ml-auto">Add Cat</a>
