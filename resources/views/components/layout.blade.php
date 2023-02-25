@@ -2,10 +2,7 @@
 
 <title>Cats App Laravel</title>
 
-@vite(['resources/css/app.css',
-       'resources/js/app.js',
-       'resources/js/cats/create-update.js',
-       'resources/js/dates.js'])
+@vite(['resources/css/app.css', 'resources/js/app.js' ])
 
 <body style="background-image: url('/images/catspawbg2.jpg'); position:relative;">  
 
@@ -13,8 +10,7 @@
 
     <div class="absolute top-20 left-1/3">
         <x-common.message />
-    </div>
-   
+    </div>   
     
     <div class="" >
         {{ $slot }}

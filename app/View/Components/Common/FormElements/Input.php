@@ -7,17 +7,23 @@ use Illuminate\View\Component;
 class Input extends Component
 {
     public $name;
-    public $title;    
+    public $title;  
+    public $mode; 
+    public $content;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $title)
+    public function __construct($name, $title, $mode, $content)
     {
+     
         $this->name  = $name;
         $this->title = $title;
+        $this->mode  = $mode;
+        $this->content  = $content;
+
     }
 
     /**

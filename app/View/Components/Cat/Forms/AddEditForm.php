@@ -15,13 +15,29 @@ class AddEditForm extends Component
     public $nameTitle;
     public $dobTitle;
     public $colourTitle;    
-    public $favFoodTitle;    
+    public $favFoodTitle; 
+    
+    public $cat;
 
-    public function __construct($mode, $method)
+    public function __construct($mode, $cat=null)
     {
     
        $this->mode = $mode;
-       $this->method = $method;        
+       $this->method = $mode == 'Create' ? 'POST' : 'PUT';
+
+       if ($this->mode == 'Create') {
+            $this->method ='POST';
+            $this->cat = new Cat();
+            $this->cat->name = '';
+            $this->cat->dob = '';
+            $this->cat->colour = '';
+            $this->cat->fav_food = '';
+          
+       } else {
+            $this->method ="PUT";
+            $this->cat = $cat;
+
+       }
 
        $this->colours = Cat::$colours;
        $this->favFoods = Cat::$favFoods;      
@@ -30,8 +46,7 @@ class AddEditForm extends Component
        $this->dobTitle = Cat::$propertyNames['dob'];
        $this->colourTitle = Cat::$propertyNames['colour'];
        $this->favFoodTitle = Cat::$propertyNames['fav_food'];
-      
-       
+   
     }
 
     /**

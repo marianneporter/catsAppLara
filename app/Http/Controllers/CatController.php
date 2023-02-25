@@ -23,13 +23,13 @@ class CatController extends Controller
          
         $request->validate([
             'name' => 'required|regex:/^[a-zA-Z ]*$/|min:3|max:50',
-            'disp_dob' => 'required',   
+            'dob' => 'required',   
             'colour' => 'required',
             'fav_food' => 'required' 
         ], [
             'name.required' => "Please enter the cat's name",
             'name.regex' => "Cats Name can contain only letters and spaces",
-            'disp_dob.required' => "Please enter the cat's date of birth",
+            'dob.required' => "Please enter the cat's date of birth",
             'colour.required' => "Please enter the cat's colour",
             'fav_food.required' => "Please enter the cat's favourite food"
         ]);           
@@ -43,5 +43,9 @@ class CatController extends Controller
  
         return redirect('/')->with('message', 'Cat created successfully!');
   
-     }
+    }
+         
+    public function edit(Cat $cat) {               
+        return view('cats.edit', ['cat' => $cat]);        
+    }    
 }  

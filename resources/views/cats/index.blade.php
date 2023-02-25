@@ -25,7 +25,7 @@
                             <td class="text-sm text-gray-600 font-medium px-6 py-4 whitespace-nowrap">{{$cat->colour}}</td>                       
                             <td class="text-sm text-gray-600 font-medium px-6 py-4 whitespace-nowrap">{{$cat->fav_food}}</td>
                             <td class="text-sm text-gray-600 font-medium px-3 py-4 whitespace-nowrap">
-                                <a href="#" class="btn bg-blue-500  text-white inline-block">Edit</a>
+                                <a href="{{ route('cats.edit', $cat->id) }}" class="btn bg-blue-500  text-white inline-block">Edit</a>                             
                             </td>
                             <td class="text-sm text-gray-600  px-3 py-4 whitespace-nowrap">
                                 <a href="#" class="btn bg-red-500 text-white inline-block" >Delete</a>

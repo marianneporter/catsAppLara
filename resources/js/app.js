@@ -1,5 +1,5 @@
 import './bootstrap';
-import { beforeSubmit, createDatepicker } from '../js/cats/create-update';
+import flatpickr from "flatpickr";
 
 //navbar toggle
 document.querySelector('#toggle-nav').addEventListener('click', () => {  
@@ -12,14 +12,4 @@ document.querySelector('#toggle-nav').addEventListener('click', () => {
         navDropdown.classList.remove('top-14');
         navDropdown.classList.add('-top-64');        
     }
-})
-
-//create-edit elements
-const currentUrl  =  window.location.href;
-if (currentUrl.includes('create' || 'edit')) {   
-    const datepickerEl = document.getElementById('dobDatepickerId'); 
-    createDatepicker(datepickerEl);
-    const addEditForm = document.querySelector('#add-edit-form');
-    
-    addEditForm.addEventListener('submit', beforeSubmit());
-}
+}) 
