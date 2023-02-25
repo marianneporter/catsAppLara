@@ -9,11 +9,13 @@
         <p class="text-red-500 text-xs mt-1">{{$message}}</p> 
     @enderror
 
-    {{$dispDate}}
-
 </div> 
 
-<script type="module">  
+<script type="module">    
+ 
+    const content = {!! json_encode($content) !!};
+    const minDate = {!! json_encode($dpMinDate) !!};
+    const maxDate = {!! json_encode($dpMaxDate) !!};
 
     const flatpickrEl = document.querySelector('#dobDatepicker');
 
@@ -21,9 +23,9 @@
         dateFormat: 'Y-m-d',
         altInput: true,
         altFormat: 'd M Y',
-        maxDate: '2023-03-14',
-        minDate: '1993-01-14',
-        defaultDate: '2022-02-14'        
+        maxDate: maxDate,
+        minDate: minDate,
+        defaultDate: content     
     });  
 
 </script>

@@ -11,7 +11,9 @@
     <x-common.form-elements.datepicker name="dob"                                   
                                        :title="$dobTitle"
                                        :mode="$mode" 
-                                       :content="$cat->dob"/>
+                                       :content="$cat->dob"
+                                       :minDate="$minDob"
+                                       :maxDate="$maxDob" />
 
     <x-common.form-elements.select name="colour"
                                    :options="$colours"

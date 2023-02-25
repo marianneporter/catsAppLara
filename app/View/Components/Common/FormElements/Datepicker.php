@@ -7,26 +7,37 @@ use Illuminate\View\Component;
 class Datepicker extends Component
 {
     public $name;     
-    public $title;
-    public $mode;     
+    public $title;        
     public $content;  
     public $datepickerId;
     public $dispDate;
+
+    public $dpMinDate = null;
+    public $dpMaxDate = null;
+    public $dpDefaultDate = null;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $title, $mode, $content)
+    public function __construct($name, $title, $mode, $content, $minDate, $maxDate )
     {
         $this->name = $name;
         $this->title = $title;
         $this->mode = $mode;       
         $this->content = $content;   
-        $this->dispDate = $this->content == null ? null : $this->getDateForCal($content);    
-  
-        $this->datepickerId = $name . 'Datepicker';    
+        $this->dispDate = $this->content == null ? null : $this->getDateForCal($content);   
+        $this->datepickerId = $name . 'Datepicker';   
+
+       
+        
+        if ($mode == 'Edit') {
+            $this->dpMinDate     = $minDate;
+            $this->dpMaxDate     = $maxDate;          
+        }
+
+     
  
     }
 

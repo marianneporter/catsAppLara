@@ -16,10 +16,29 @@ class Cat extends Model
 
     public static $favFoods = [ 'Fish', 'Chicken', 'Wet Cat Food', 'Dry Cat Food'];
 
+  
+
     public static $propertyNames = [
         "name" => "Cat's Name",
         "dob" => "Date of Birth",
         "colour" => "Colour",
         "fav_food" => "Favourite Food"
-    ];                               
+    ];   
+
+    public static function getMinBirthDate() {
+
+        $today =  date(('Y-m-d'));
+        $strtotimeInput = $today . ' -30 year';
+
+        $dateTimestamp = strtotime($strtotimeInput);
+        $thirtyYearsAgo = date('Y-m-d', $dateTimestamp);
+        
+        return $thirtyYearsAgo;
+    }
+
+    public static function getMaxBirthDate() {
+ 
+        return date(('Y-m-d'));
+    }
+    
 }
