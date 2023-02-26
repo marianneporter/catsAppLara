@@ -9,6 +9,8 @@ class Select extends Component
     public $name;  
     public $options;
     public $title;
+    public $mode;
+    public $content;
 
     /**
      * Create a new component instance.
@@ -16,11 +18,14 @@ class Select extends Component
      * @return void
      */
 
-    public function __construct($name, $options, $title)
+    public function __construct($name, $options, $title, $mode, $content)
     {
         $this->name = $name;
         $this->options = $options; 
         $this->title = $title;   
+        $this->mode = $mode;
+        $this->content = $content;
+      
     }
 
     /**

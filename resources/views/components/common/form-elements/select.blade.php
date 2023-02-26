@@ -2,12 +2,22 @@
 
     <label class="block" for="{{$name}}">{{$title}}</label>
   
-    <select id="{{$name}}" class="input-element px-2.5" name="{{$name}}" >   
+    <select  class='input-element select-element px-2.5'
+             name="{{$name}}" >   
 
-        <option hidden value="">Select {{ $title }}</option>  
+        <option hidden value="" ><span>Select {{ $title }}</span></option>  
           
         @foreach($options as $option)         
-            <option value="{{$option}}" @selected(old($name) == $option) >{{$option}}</option>
+            <option value="{{$option}}"
+         
+                @if ($mode == 'Create') 
+                     @selected(old($name) == $option)
+                @else
+                     @selected($content == $option)    
+                @endif                
+            >                
+                {{$option}}
+            </option>
         @endforeach
  
     </select>

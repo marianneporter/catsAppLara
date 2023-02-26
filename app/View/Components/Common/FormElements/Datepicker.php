@@ -9,6 +9,7 @@ class Datepicker extends Component
     public $name;     
     public $title;        
     public $content;  
+    public $mode;
     public $datepickerId;
     public $dispDate;
 
