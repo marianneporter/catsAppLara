@@ -21,7 +21,7 @@
                     @foreach($cats as $cat)
                         <tr class="bg-white border-b">
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-600">{{$cat->name}}</td>
-                            <td class="text-sm text-gray-600 font-medium px-6 py-4 whitespace-nowrap">{{$cat->dob}}</td>                       
+                            <td class="text-sm text-gray-600 font-medium px-6 py-4 whitespace-nowrap">{{convertDbDateToDispFormat($cat->dob)}}</td>                       
                             <td class="text-sm text-gray-600 font-medium px-6 py-4 whitespace-nowrap">{{$cat->colour}}</td>                       
                             <td class="text-sm text-gray-600 font-medium px-6 py-4 whitespace-nowrap">{{$cat->fav_food}}</td>
                             <td class="text-sm text-gray-600 font-medium px-3 py-4 whitespace-nowrap">
