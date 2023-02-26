@@ -2,10 +2,10 @@
 
     <label class="block" for="{{$name}}">{{$title}}</label>
   
-    <select  class='input-element select-element px-2.5'
-             name="{{$name}}" >   
+    <select  class="input-element select-element px-2.5 "
+             name="{{$name}}" required>   
 
-        <option hidden value="" ><span>Select {{ $title }}</span></option>  
+        <option hidden  value="" >Select {{ $title }}</option>  
           
         @foreach($options as $option)         
             <option value="{{$option}}"

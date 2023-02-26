@@ -1,4 +1,4 @@
-<form method="POST" action="/cats" autocomplete="off" 
+<form method="POST" action="/cats" autocomplete="off" novalidate
       id="add-edit-form">
     @csrf
     @method($method)

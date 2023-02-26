@@ -14,13 +14,34 @@ document.querySelector('#toggle-nav').addEventListener('click', () => {
     }
 }) 
 
-/* Remove placeholder colour from selects once option has been selected */
+/* Works with the common/select component gets all select elements
+   and handles placeholder if required */
 document.addEventListener('DOMContentLoaded', (event) => {
-    let selectElements = document.querySelectorAll('.select-element');
+
+    let selectElements = document.querySelectorAll('.select-element');   
+    let currentSelection;
 
     selectElements.forEach((el) => {
-        el.addEventListener('change', (event) => { 
-            event.target.style.color = "#303030";
-        }, { once: true})
+
+        currentSelection = el.selectedIndex; 
+
+        //currentSelection != 0 means no placeholder so all options dark
+        if (currentSelection != 0) {    
+
+            el.style.color="#303030";
+            
+        } else {
+            // placeholder option is initally selected and element set 
+            // to light gray.  On select of option element is set to dark
+            el.style.color="#808080"
+
+            el.querySelectorAll('option').forEach((o) => {
+                o.style.color="#303030";
+            })
+
+            el.addEventListener('change', (event) => { 
+                    event.target.style.color = "#303030";
+            }, { once: true})            
+        }    
     })
 })

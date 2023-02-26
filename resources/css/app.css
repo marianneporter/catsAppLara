@@ -17,10 +17,3 @@
            dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
 }
 
-.select-element  {
-    @apply text-gray-400 text-[14px]
-}
-
-.select-element option {
-    @apply text-gray-800
-}
