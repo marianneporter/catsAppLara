@@ -24,3 +24,5 @@ Route::post('/cats', [CatController::class, 'store'])->name('cats.store');
 Route::get('/cats/{cat}/edit', [CatController::class, 'edit'])->name('cats.edit');
 Route::put('/cats/{cat}',  [CatController::class, 'update'])->name('cats.update');
 
+Route::delete('/cats/{cat}', [CatController::class, 'destroy'])->name('cats.destroy');
+

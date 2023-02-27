@@ -25,10 +25,19 @@
                             <td class="text-sm text-gray-600 font-medium px-6 py-4 whitespace-nowrap">{{$cat->colour}}</td>                       
                             <td class="text-sm text-gray-600 font-medium px-6 py-4 whitespace-nowrap">{{$cat->fav_food}}</td>
                             <td class="text-sm text-gray-600 font-medium px-3 py-4 whitespace-nowrap">
-                                <a href="{{ route('cats.edit', $cat->id) }}" class="btn bg-blue-500  text-white inline-block">Edit</a>                             
+                                <a href="{{ route('cats.edit', $cat->id) }}" class="btn bg-blue-500 text-white inline-block">Edit</a>                             
                             </td>
                             <td class="text-sm text-gray-600  px-3 py-4 whitespace-nowrap">
-                                <a href="#" class="btn bg-red-500 text-white inline-block" >Delete</a>
+                                <form method="POST" action="{{ route('cats.destroy', $cat->id) }}"
+                                      class="delete-form"                                   
+                                      data-cat-name="{{$cat->name}}"
+                                      onclick="return confirm('Are your sure you would like to delete ' +  getName(event) + '?')" >
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" id="delete-submit" 
+                                            class="btn bg-red-500 text-white inline-block"
+                                            data-name="{{$cat->name}}">Delete</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
@@ -38,8 +47,8 @@
             <h3>Sorry! No cats were found
         @endunless
     </div>
-
-
-
-
 </x-layout>
+
+<script>
+    const getName = (event) => event.target.dataset.name;    
+</script>
