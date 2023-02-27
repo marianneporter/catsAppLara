@@ -1,7 +1,15 @@
-<form method="POST" action="/cats" autocomplete="off" novalidate
+<form method="POST"
+      action={{ $mode == "Create"
+                ?  route('cats.store') : route('cats.update', $cat->id)}}
+      autocomplete="off" novalidate
       id="add-edit-form">
-    @csrf
-    @method($method)
+
+    @csrf   
+
+    @if ($mode == 'Edit')
+        @method('PUT')
+    @endif
+  
 
     <x-common.form-elements.input name="name"
                                   :title="$nameTitle"
@@ -29,7 +37,7 @@
 
     <div class="mt-8 flex justify-around">                   
         <a href="#" class="btn bg-gray-500 text-white min-w-[10rem] py-5" >Back</a>
-        <button class="btn bg-green-500 text-white min-w-[10rem] py-5" type="submit" type="submit">{{ $mode }} Cat</button>
+        <button class="btn bg-green-500 text-white min-w-[10rem] py-5" type="submit">{{ $mode }} Cat</button>
     </div>                           
 </form>
 

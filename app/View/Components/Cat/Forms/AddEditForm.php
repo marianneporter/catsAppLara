@@ -8,7 +8,6 @@ use App\Models\Cat;
 class AddEditForm extends Component
 {
     public $mode;
-    public $method; 
 
     public $colours;
     public $favFoods;
@@ -19,8 +18,6 @@ class AddEditForm extends Component
     public $dobTitle;
     public $colourTitle;    
     public $favFoodTitle; 
-
-
     
     public $cat;
 
@@ -30,18 +27,15 @@ class AddEditForm extends Component
        $this->mode = $mode;
        $this->method = $mode == 'Create' ? 'POST' : 'PUT';
 
-       if ($this->mode == 'Create') {
-            $this->method ='POST';
+       if ($this->mode == 'Create') {         
             $this->cat = new Cat();
             $this->cat->name = '';
             $this->cat->dob = '';
             $this->cat->colour = '';
             $this->cat->fav_food = '';
           
-       } else {
-            $this->method ="PUT";
+       } else {         
             $this->cat = $cat;
-
        }
 
        $this->colours = Cat::$colours;

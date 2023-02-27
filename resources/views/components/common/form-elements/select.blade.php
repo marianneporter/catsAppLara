@@ -13,7 +13,7 @@
                 @if ($mode == 'Create') 
                      @selected(old($name) == $option)
                 @else
-                     @selected($content == $option)    
+                     @selected(old($name, $content) == $option)    
                 @endif                
             >                
                 {{$option}}
