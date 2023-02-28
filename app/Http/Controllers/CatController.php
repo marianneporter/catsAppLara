@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Cat;
 use App\Http\Requests\CatRequest;
 
+
 use Illuminate\Http\Request;
 
 class CatController extends Controller
@@ -24,9 +25,12 @@ class CatController extends Controller
         $validated = $request->validated();
  
         Cat::create($validated);
- 
-        return redirect('/')->with('message',  $validated['name'] . ' created successfully!');
-  
+
+        $messageText =  $validated['name'] .' created successfully!';
+        $request->session()->flash("messageData",
+                                   [ 'type' => 'success', 
+                                     'text' => $messageText ]); 
+        return redirect('/');  
     }
          
     public function edit(Cat $cat) {               
@@ -35,18 +39,26 @@ class CatController extends Controller
 
     public function update(CatRequest $request, Cat $cat) {
 
-        $validated = $request->validated();
-
-        $cat->update($validated);       
-
-        return redirect('/')->with('message', $validated['name'] .' updated successfully!');  
-
+        $validated = $request->validated();      
+   
+        $messageText =  $validated['name'] .' updated successfully!';
+        $request->session()->flash("messageData",
+                                   [ 'type' => 'success', 
+                                     'text' => $messageText ]);
+  
+        return redirect('/');
     }
 
     public function destroy(Cat $cat) {       
 
-   //     $cat->delete(); 
-        return redirect('/')->with('message', $cat->name . ' is deleted');    
+        $cat->delete(); 
+   
+        $messageText =  $cat->name . ' is deleted';
+        session()->flash("messageData",
+                         [ 'type' => 'success', 
+                           'text' => $messageText ]);
+
+        return redirect('/');    
      }
     
 }  
