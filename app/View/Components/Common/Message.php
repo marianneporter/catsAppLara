@@ -7,10 +7,9 @@ use Session;
 
 
 class Message extends Component
-{
-
-    public $messageType;
+{ 
     public $messageText;
+    public $typeClass;
      
     /**
      * Create a new component instance.
@@ -23,6 +22,7 @@ class Message extends Component
             $messageData = Session::get('messageData');
             $this->messageType = $messageData['type'];
             $this->messageText = $messageData['text'];
+            $this->typeClass = 'status-' .  $messageData['type']; 
         } else {
             $this->messageType = null;
             $this->messageText = null;

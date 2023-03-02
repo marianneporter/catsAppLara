@@ -43,7 +43,7 @@ class CatController extends Controller
    
         $messageText =  $validated['name'] .' updated successfully!';
         $request->session()->flash("messageData",
-                                   [ 'type' => 'success', 
+                                   [ 'type' => 'warning', 
                                      'text' => $messageText ]);
   
         return redirect('/');

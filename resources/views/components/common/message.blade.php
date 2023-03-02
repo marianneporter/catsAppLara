@@ -1,5 +1,5 @@
 @if ($messageText != null) 
-    <div class="status-alert status-success bg-yellow-200 text-yellow-700">
+    <div class="status-alert {{ $typeClass }}">
         <p> {{ $messageText }}</p>       
     </div> 
 @endif
@@ -8,23 +8,18 @@
 <script>
 
     document.addEventListener('DOMContentLoaded', (event) => {
-        console.log('in event handler');
 
-        let statusAlert = document.querySelector('.status-alert');
-        console.log(statusAlert);
+        let statusAlert = document.querySelector('.status-alert'); 
 
         if (statusAlert) {
-            console.log('status alert');
+        
             statusMessageAnimation(statusAlert);
             
-        } else {
-            console.log('no status alert');
-        }
+        } 
     })
 
-
     const statusMessageAnimation = async (statusAlert) => {
-        console.log('in statusMessageAnimation');     
+      
         await sleep(500);
         doAnimation(statusAlert, 'not-visible', 'visible');  
         await sleep(6000);
@@ -41,8 +36,5 @@
             let timeoutId = setTimeout(() => resolve(true), timeDelay);       
         })
     }
-
-
-
 
 </script>

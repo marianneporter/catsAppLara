@@ -1,0 +1,49 @@
+.status-alert {
+    position: fixed;
+    width: 20rem;
+    top: -10rem;
+    left: calc(50% - 10rem); 
+    z-index: 5;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: top 2s;
+    font-weight: 500; 
+}
+
+.not-visible {
+    top: -10rem;
+}
+
+.visible {
+    top: 5rem;
+}
+
+.status-danger {
+    background-color: rgb(255, 230, 230);
+    color: rgb(255, 0, 0);
+}
+
+.status-success {
+    background-color: rgb(220, 238, 220);
+    color: rgb(12, 184, 12);
+}
+
+.status-warning {
+    background-color: rgb(255, 243, 230);
+    color: rgb(248, 120, 16);
+}
+
+@media screen and (max-width: 575px) {
+    .status-alert {
+        width: 15rem;
+        left: calc(100% - 15rem);      
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .status-alert {
+        width: 10rem;
+        left: calc(100% - 10rem);  
+    }
+}
