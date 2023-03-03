@@ -25,12 +25,3 @@
     </body>
   
 </html>
-
-
-
-
-<!doctype html>
-
-<title>Cats App Laravel</title>
-
-

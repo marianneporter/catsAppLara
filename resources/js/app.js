@@ -1,5 +1,6 @@
 import './bootstrap';
 import flatpickr from "flatpickr";
+import './utilities';
 
 //navbar toggle
 document.querySelector('#toggle-nav').addEventListener('click', () => {  

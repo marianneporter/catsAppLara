@@ -6,8 +6,11 @@
                 value = "{{old($name)}}"  
             @else
                 value = "{{ old($name, $content) }}"
-            @endif >    
-    @error($name)  
-        <p class="text-red-500 text-xs mt-1">{{$message}}</p> 
-    @enderror
+            @endif >  
+    <div class="field-error">
+        @error($name)  
+           <p class="text-red-500 text-xs">{{$message}}</p> 
+        @enderror
+    </div>  
+
 </div>

@@ -40,3 +40,20 @@
         <button class="btn bg-green-500 text-white min-w-[10rem] py-5" type="submit">{{ $mode }} Cat</button>
     </div>                           
 </form>
+
+<script type="module">
+
+    addEventListener('DOMContentLoaded', (event) => {
+     
+        let formStatusCheck = new CheckForm();   
+    });
+   
+   
+
+    
+
+  
+   
+  
+
+</script>

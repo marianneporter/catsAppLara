@@ -10,6 +10,9 @@
     @apply w-20 h-8 font-bold rounded-xl shadow-2xl flex justify-center items-center
 }
 
+/* common input element this class is needed on all input elements so that they all look the 
+   same and so that the JavaScript CheckForm class can remove error messages when the 
+   user adds new input */ 
 .input-element {
     @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
            focus:ring-blue-500 focus:border-blue-500 block w-full  py-2.5 

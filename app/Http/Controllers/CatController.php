@@ -38,12 +38,14 @@ class CatController extends Controller
     }    
 
     public function update(CatRequest $request, Cat $cat) {
-
-        $validated = $request->validated();      
+        
+        $validated = $request->validated();   
+        
+        $cat->update($validated); 
    
         $messageText =  $validated['name'] .' updated successfully!';
         $request->session()->flash("messageData",
-                                   [ 'type' => 'warning', 
+                                   [ 'type' => 'success', 
                                      'text' => $messageText ]);
   
         return redirect('/');
