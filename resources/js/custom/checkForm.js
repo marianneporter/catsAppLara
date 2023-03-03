@@ -43,6 +43,7 @@ export default class CheckForm {
             } else {
                 console.log('Form Unchanged'); // nothing changed! do warning message and
                                               // do not submit
+  
                 event.preventDefault();
                 return false; 
             }      

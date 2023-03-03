@@ -12,11 +12,9 @@
 
     <body style="background-image: url('/images/catspawbg2.jpg'); position:relative;">  
 
-        <x-nav />
-    
-        <div class="absolute top-20 left-1/3">
-            <x-common.message />
-        </div>   
+        <x-nav />    
+      
+        <x-common.message />      
         
         <div class="" >
             {{ $slot }}
