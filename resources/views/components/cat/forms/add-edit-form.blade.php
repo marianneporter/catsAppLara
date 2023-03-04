@@ -36,7 +36,7 @@
                                   :content="$cat->fav_food" /> 
 
     <div class="mt-8 flex justify-around">                   
-        <a href="#" class="btn bg-gray-500 text-white min-w-[10rem] py-5" >Back</a>
+        <a href="#" class="btn bg-gray-500 text-white min-w-[10rem] py-5" >Cancel</a>
         <button class="btn bg-green-500 text-white min-w-[10rem] py-5" type="submit">{{ $mode }} Cat</button>
     </div>                           
 </form>
@@ -46,14 +46,15 @@
     addEventListener('DOMContentLoaded', (event) => {
      
         let formStatusCheck = new CheckForm();   
-    });
-   
-   
 
-    
+        window.onbeforeunload = function() {
 
-  
-   
-  
+            if (formStatusCheck.submitted || !formStatusCheck.formChanged()) {
+                return;
+            }    
+
+            return 'Do you really want to leave this page? Changes may not be saved';
+         };
+    });  
 
 </script>

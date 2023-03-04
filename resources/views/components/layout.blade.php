@@ -16,7 +16,7 @@
       
         <x-common.message />      
         
-        <div class="" >
+        <div class="content" >
             {{ $slot }}
         </div>     
     
