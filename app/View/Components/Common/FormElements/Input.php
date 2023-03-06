@@ -10,19 +10,22 @@ class Input extends Component
     public $title;  
     public $mode; 
     public $content;
+    public $inputType;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $title, $mode, $content)
+    public function __construct($name, $title, $mode, $content="", $inputType="text")
     {
-     
+       
         $this->name  = $name;
         $this->title = $title;
         $this->mode  = $mode;
         $this->content  = $content;
+        $this->inputType = $inputType;
+
 
     }
 

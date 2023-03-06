@@ -34,7 +34,7 @@ class CatRequest extends FormRequest
     public function messages() {
         return [
             'name.required' => "Please enter the cat's name",
-            'name.regex' => "Cats Name can contain only letters and spaces",
+            'name.regex' => "Cats Name can contain only letters and -",
             'dob.required' => "Please enter the cat's date of birth",
             'colour.required' => "Please enter the cat's colour",
             'fav_food.required' => "Please enter the cat's favourite food"        

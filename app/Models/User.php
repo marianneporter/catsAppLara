@@ -18,7 +18,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
     ];
@@ -41,4 +42,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+        
+    public function setFirstNameAttribute($first_name) {
+        $this->attributes['first_name'] = ucwords($first_name);
+    }
+       
+    public function setLastNameAttribute($last_name) {
+        $this->attributes['last_name'] = ucwords($last_name);
+    }
+       
+    public function setEmailAttribute($email) {
+        $this->attributes['email'] = strToLower($email);
+    }
+    
+    public function setPasswordAttribute($password) {
+        $this->attributes['password'] = bcrypt($password);
+    }
+
 }
