@@ -17,20 +17,48 @@ use App\Http\Controllers\AuthController;
 */
 
 
-Route::get('/', [ CatController::class, 'index'] );
+Route::get('/', [ CatController::class, 'index'] )->middleware('auth');
 
-Route::get('/cats/create', [CatController::class, 'create'])->name('cats.create');
-Route::post('/cats', [CatController::class, 'store'])->name('cats.store');
+// create cat get and post
+Route::get('/cats/create', [CatController::class, 'create'])
+                            ->name('cats.create')
+                            ->middleware('auth');
+Route::post('/cats', [CatController::class, 'store'])
+                      ->name('cats.store')
+                      ->middleware('auth');
 
-Route::get('/cats/{cat}/edit', [CatController::class, 'edit'])->name('cats.edit');
-Route::put('/cats/{cat}',  [CatController::class, 'update'])->name('cats.update');
+// edit cat get and post
+Route::get('/cats/{cat}/edit', [CatController::class, 'edit'])
+                                ->name('cats.edit')
+                                ->middleware('auth');
+Route::put('/cats/{cat}',  [CatController::class, 'update'])
+                                 ->name('cats.update')
+                                 ->middleware('auth');
 
-Route::delete('/cats/{cat}', [CatController::class, 'destroy'])->name('cats.destroy');
+// delete cat post
+Route::delete('/cats/{cat}', [CatController::class, 'destroy'])
+                              ->name('cats.destroy')
+                              ->middleware('auth');
 
-Route::get('/auth/register', [AuthController::class, 'create'])->name('auth.create')->middleware('guest');
-Route::post('/auth/store', [AuthController::class, 'store'])->name('auth.store')->middleware('guest');
+// register get and post
+Route::get('/auth/register', [AuthController::class, 'create'])
+                            ->name('auth.create')
+                            ->middleware('guest');
 
-Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login')->middleware('guest');
-Route::post('/auth/authenticate', [AuthController::class, 'authenticate'])->name('auth.authenticate');
+Route::post('/auth/store', [AuthController::class, 'store'])
+                            ->name('auth.store')
+                            ->middleware('guest');
 
-Route::post('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout')->middleware('auth');
+// login get and post
+Route::get('/auth/login', [AuthController::class, 'login'])
+                           ->name('auth.login')
+                           ->middleware('guest');
+
+Route::post('/auth/authenticate', [AuthController::class, 'authenticate'])
+                                   ->name('auth.authenticate')
+                                   ->middleware('guest');
+
+// logout                                
+Route::post('/auth/logout', [AuthController::class, 'logout'])
+                             ->name('auth.logout')
+                             ->middleware('auth');
