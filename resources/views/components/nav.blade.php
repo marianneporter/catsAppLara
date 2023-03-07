@@ -19,19 +19,20 @@
             <li class="block decoration-0 md:mr-4 md:ml-auto  bg-blue-900" >
                 <div class="md:hidden border-b-2"></div>   
                 @auth
-                    <div class="hidden md:block"><a href="">Hello {{ auth()->user()->first_name }}</a></div>  
-                    <form method="POST" action={{ route('auth.logout') }}>
-                        @csrf
-                        <button type="submit" class="text-white bg-blue-900 border-0  px-7 md:px-4 py-4 md:py-1">Logout</button>
-                    </form>
-                   
+                    <div class="md:flex content-center">
+                        <div class="hidden md:block md:pt-1"><a href="">Hello {{ auth()->user()->first_name }}</a></div>  
+                        <form method="POST" action={{ route('auth.logout') }}>
+                            @csrf
+                            <button type="submit" class="text-white bg-blue-900 border-0  px-7 md:px-4 py-4 md:py-1">Logout</button>
+                        </form>
+                    </div>                   
                 @else
-                    <div class="hidden md:block"><a href={{ route( 'auth.create' ) }}>Register</a></div>  
-                    <div><a class="text-white bg-blue-900 border-0  px-7 md:px-4 py-4 md:py-1"
-                          href={{ route('auth.login') }}>Login</a></div>
-                @endauth      
-
-                
+                    <div class="md:flex">
+                        <div class="hidden md:block"><a href={{ route( 'auth.create' ) }}>Register</a></div>  
+                        <div><a class="text-white bg-blue-900 border-0  px-7 md:px-4 py-4 md:py-1"
+                              href={{ route('auth.login') }}>Login</a></div>
+                    </div> 
+                @endauth                      
             </li>             
         </ul>   
     </div>
