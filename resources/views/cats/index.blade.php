@@ -6,49 +6,24 @@
         
 
         @unless($cats->count() == 0) 
-            <table class="min-w-full">
-                <thead class="border-b">
-                <tr>
-                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">Name</th>
-                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">Date of Birth</th>
-                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">Colour</th>
-                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">Favourite Food</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                    @foreach($cats as $cat)
-                        <tr class="bg-white border-b">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-600">{{$cat->name}}</td>
-                            <td class="text-sm text-gray-600 font-medium px-6 py-4 whitespace-nowrap">{{convertDbDateToDispFormat($cat->dob)}}</td>                       
-                            <td class="text-sm text-gray-600 font-medium px-6 py-4 whitespace-nowrap">{{$cat->colour}}</td>                       
-                            <td class="text-sm text-gray-600 font-medium px-6 py-4 whitespace-nowrap">{{$cat->fav_food}}</td>
-                            <td class="text-sm text-gray-600 font-medium px-3 py-4 whitespace-nowrap">
-                                <a href="{{ route('cats.edit', $cat->id) }}" class="btn bg-blue-500 text-white inline-block">Edit</a>                             
-                            </td>
-                            <td class="text-sm text-gray-600  px-3 py-4 whitespace-nowrap">
-                                <form method="POST" action="{{ route('cats.destroy', $cat->id) }}"
-                                      class="delete-form"                                   
-                                      data-cat-name="{{$cat->name}}"
-                                      onclick="return confirm('Are your sure you would like to delete ' +  getName(event) + '?')" >
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" id="delete-submit" 
-                                            class="btn bg-red-500 text-white inline-block"
-                                            data-name="{{$cat->name}}">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>        
+            <div class="hidden md:block">
+                <x-cat.table :cats=$cats />
+            </div>   
+            <div class="md:hidden">
+                <x-cat.cards :cats=$cats />
+            </div>
+    
+            <div class="mx-auto mt-12 pb-10 w-4/5">
+                {{ $cats->links() }}
+            </div>          
+           
+
         @else
             <h3>Sorry! No cats were found
         @endunless
+     
     </div>
+
+
 </x-layout>
 
-<script>
-    const getName = (event) => event.target.dataset.name;    
-</script>

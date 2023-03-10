@@ -24,7 +24,7 @@ export default class CheckForm {
         this.inputEls = document.querySelectorAll('.input-element'); 
 
         this.originalData = this.stringifyFormFields();   
-
+ 
         this.setupInputListeners();
 
         this.setupSubmitListener(); 
@@ -45,23 +45,21 @@ export default class CheckForm {
                 let errToRemove = selectedDiv.querySelector('.field-error');
                 if (errToRemove) {
                     errToRemove.remove();
-                }                                  
+                }  
+                console.log('input listener fired');                              
             });
         });
     }
 
     setupSubmitListener = () => {
-
-        document.querySelector('form').addEventListener('submit', (event) => {          
-
-            if (this.formChanged()) {       
-                this.submitted = true;        
-                return true;
-            } else {
+       
+        document.querySelector('#form').addEventListener('submit', (event) => {     
+             if (this.formChanged()) {      
+                this.submitted = true;          
+            } else {             
                 this.createErrorDiv('Please amend form or cancel', 'warning');             
                 this.message.messageAnimation(this.errorDiv)
                 event.preventDefault();
-                return false; 
             }               
        })
     }

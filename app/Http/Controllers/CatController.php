@@ -1,18 +1,26 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Cat;
-use App\Http\Requests\CatRequest;
-
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\Cat;
+use App\Http\Requests\CatRequest;
 
 class CatController extends Controller
 {
 
-    public function index() {
+     public function index() {
+    //     return view('cats.index', [      
+    //         'cats' => DB::table('cats')  
+    //                   ->orderBy('name', 'asc')   
+    //                   ->paginate(5) 
+    //     ]);
+
         return view('cats.index', [      
-            'cats' => Cat::all()        
+            //    'listings' => Listing::all()      
+               'cats' => Cat::orderBy('name', 'asc')->paginate(4)
         ]);
     }
     

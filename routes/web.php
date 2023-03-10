@@ -17,7 +17,9 @@ use App\Http\Controllers\AuthController;
 */
 
 
-Route::get('/', [ CatController::class, 'index'] )->middleware('auth');
+Route::get('/', [ CatController::class, 'index'] )
+                 ->name('cats.list')
+                 ->middleware('auth');
 
 // create cat get and post
 Route::get('/cats/create', [CatController::class, 'create'])

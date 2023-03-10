@@ -1,8 +1,8 @@
 <form method="POST"
       action={{ $mode == "Create"
                 ?  route('cats.store') : route('cats.update', $cat->id)}}
-      autocomplete="off" novalidate
-      id="add-edit-form">
+      autocomplete="off" novalidate     
+      id="form">
 
     @csrf   
 
@@ -36,7 +36,7 @@
                                   :content="$cat->fav_food" /> 
 
     <div class="mt-8 flex justify-around">                   
-        <a href="#" class="btn bg-gray-500 text-white min-w-[10rem] py-5" >Cancel</a>
+        <a href={{ route('cats.list') }} class="btn bg-gray-500 text-white min-w-[10rem] py-5" >Cancel</a>
         <button class="btn bg-green-500 text-white min-w-[10rem] py-5" type="submit">{{ $mode }} Cat</button>
     </div>                           
 </form>
@@ -47,14 +47,13 @@
      
         let formStatusCheck = new CheckForm();   
 
-        window.onbeforeunload = function() {
-
-            if (formStatusCheck.submitted || !formStatusCheck.formChanged()) {
-                return;
-            }    
-
-            return 'Do you really want to leave this page? Changes may not be saved';
-         };
+        window.onbeforeunload = function() {  
+            if (!formStatusCheck.submitted && formStatusCheck.formChanged() ) {            
+                return 'Do you really want to leave this page? Changes may not be saved';
+            }      
+        };
     });  
+  
+   
 
 </script>
