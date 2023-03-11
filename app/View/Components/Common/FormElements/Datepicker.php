@@ -29,17 +29,10 @@ class Datepicker extends Component
         $this->mode = $mode;       
         $this->content = $content;   
         $this->dispDate = $this->content == null ? null : $this->getDateForCal($content);   
-        $this->datepickerId = $name . 'Datepicker';   
-
-       
-        
-        if ($mode == 'Edit') {
-            $this->dpMinDate     = $minDate;
-            $this->dpMaxDate     = $maxDate;          
-        }
-
-     
- 
+        $this->datepickerId = $name . 'Datepicker';          
+  
+        $this->dpMinDate     = $minDate;
+        $this->dpMaxDate     = $maxDate;  
     }
 
     /**

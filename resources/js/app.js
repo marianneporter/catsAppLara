@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         currentSelection = el.selectedIndex; 
 
-        //currentSelection != 0 means no placeholder so all options dark
+        //currentSelection != 0 means no placeholder so all element text options dark
         if (currentSelection != 0) {    
 
             el.style.color="#303030";
