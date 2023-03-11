@@ -44,6 +44,8 @@
 <script type="module">
 
     addEventListener('DOMContentLoaded', (event) => {
+
+        SelectEls.setupSelectElements();
      
         let formStatusCheck = new CheckForm();   
 

@@ -7,3 +7,6 @@ window.MessageAnimate = MessageAnimate;
 import CatIndex from './catIndex';
 window.CatIndex = CatIndex;
 
+import Select from './utility/select';
+window.SelectEls = Select;
+
