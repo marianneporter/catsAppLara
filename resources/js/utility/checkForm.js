@@ -45,8 +45,7 @@ export default class CheckForm {
                 let errToRemove = selectedDiv.querySelector('.field-error');
                 if (errToRemove) {
                     errToRemove.remove();
-                }  
-                console.log('input listener fired');                              
+                }                                         
             });
         });
     }

@@ -1,15 +1,15 @@
 <x-layout>
     
-    <div class="max-w-4xl mx-auto min-h-screen pt-28 px-16 bg-white ">
+    <div class="lg:max-w-4xl mx-auto min-h-screen pt-28 px-4  lg:px-12 bg-white ">
         <h1 class="text-3xl font-bold mb-5">Cats</h1>
         <a href={{ route('cats.create') }} class="btn bg-blue-500 text-white mr-5 ml-auto">Add Cat</a>
         
 
         @unless($cats->count() == 0) 
-            <div class="hidden md:block">
+            <div class="hidden lg:block">
                 <x-cat.table :cats=$cats />
             </div>   
-            <div class="md:hidden">
+            <div class="lg:hidden">
                 <x-cat.cards :cats=$cats />
             </div>
     
@@ -23,6 +23,7 @@
         @endunless
      
     </div>
+
 
 
 </x-layout>

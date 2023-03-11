@@ -20,12 +20,11 @@ class Message extends Component
     {     
         if (Session::has('messageData')) {
             $messageData = Session::get('messageData');
-       //     $this->messageType = $messageData['type'];
+     
             $this->messageText = $messageData['text'];
             $this->typeClass = 'status-' .  $messageData['type']; 
         } else {
 
-         //   $this->messageType = null;
             $this->messageText = null;
         } 
     }
