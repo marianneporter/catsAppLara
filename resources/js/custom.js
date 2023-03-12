@@ -10,3 +10,5 @@ window.CatIndex = CatIndex;
 import Select from './utility/select';
 window.SelectEls = Select;
 
+import Nav from './nav';
+window.Nav = Nav;

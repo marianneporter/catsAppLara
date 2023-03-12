@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="max-w-lg mx-auto min-h-screen pt-28 px-16 bg-white">
+    <div class="small-container">
 
         <header>
             <h2 class="text-2xl">
@@ -24,11 +24,12 @@
                                               mode="Create"                                           
                                               input-type="password"  />   
 
-            <div class="mt-8 ">                 
-                <button class="btn bg-green-500 text-white min-w-[10rem] py-5"
-                        type="submit">Login</button>
-            </div>                           
-      </form>            
+                <div class="mt-8 ">                 
+                    <button class="btn btn-shadow bg-green-500 text-white 
+                                   min-w-full md:min-w-[10rem] py-[1.33rem]"                     
+                            type="submit">Login</button>
+                </div>                           
+            </form>            
             
 
         </main>

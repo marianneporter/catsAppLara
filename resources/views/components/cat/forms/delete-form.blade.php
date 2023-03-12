@@ -5,6 +5,6 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit" id="delete-submit" 
-                                class="btn bg-red-500 text-white inline-block"
+                                class="btn btn-shadow bg-red-500 text-white inline-block"
                                 data-name="{{$cat->name}}">Delete</button>
 </form>
