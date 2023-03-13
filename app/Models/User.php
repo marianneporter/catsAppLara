@@ -45,11 +45,13 @@ class User extends Authenticatable
 
         
     public function setFirstNameAttribute($first_name) {
-        $this->attributes['first_name'] = ucwords($first_name);
+    
+        $this->attributes['first_name'] = formatName($first_name);
     }
        
-    public function setLastNameAttribute($last_name) {
-        $this->attributes['last_name'] = ucwords($last_name);
+    public function setLastNameAttribute($last_name) {      
+
+        $this->attributes['last_name'] =  formatLastName($last_name);
     }
        
     public function setEmailAttribute($email) {
@@ -59,5 +61,7 @@ class User extends Authenticatable
     public function setPasswordAttribute($password) {
         $this->attributes['password'] = bcrypt($password);
     }
+
+   
 
 }
