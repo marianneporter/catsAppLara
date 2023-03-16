@@ -9,7 +9,7 @@ class Cat extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'dob', 'colour', 'fav_food'];
+    protected $fillable = ['id', 'name', 'dob', 'colour', 'fav_food'];
         
     public function setNameAttribute($name) {
         $this->attributes['name'] = ucwords($name);
