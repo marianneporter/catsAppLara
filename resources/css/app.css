@@ -18,8 +18,9 @@
            dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
     font-size: 16px;   
     min-width: 100%; 
+    max-width: 100%
     min-height: 4rem;
-    --webkit-appearance: none;
+    max-height: 4rem;
     
 }
 
