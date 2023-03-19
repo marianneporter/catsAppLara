@@ -21,7 +21,8 @@
     max-width: 100%;
     min-height: 4rem;
     max-height: 4rem;
-    
+    background-color: pink;
+    -webkit-appearance: none;
 }
 
 .btn {  
