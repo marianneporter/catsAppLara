@@ -13,7 +13,7 @@
    user adds new input */ 
 .input-element {
     @apply bg-gray-50 border border-gray-300 text-gray-900 rounded-lg 
-           focus:ring-blue-500 focus:border-blue-500 block py-2.5 
+           focus:ring-blue-500 focus:border-blue-500 block py-2.5 w-full
            dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
            dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
     /* font-size: 16px;   
@@ -21,7 +21,7 @@
     max-width: 100%;
     min-height: 4rem;
     max-height: 4rem; */
-    background-color: lightcyan;
+    background-color: lightseagreen;
     -webkit-appearance: none;
 }
 
