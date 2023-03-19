@@ -12,10 +12,11 @@
    same and so that the JavaScript CheckForm class can remove error messages when the 
    user adds new input */ 
 .input-element {
-    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
-           focus:ring-blue-500 focus:border-blue-500 block w-full  py-2.5 
+    @apply bg-gray-50 border border-gray-300 text-gray-900 rounded-lg 
+           focus:ring-blue-500 focus:border-blue-500 block min-w-full py-2.5 
            dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
-           dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+           dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+    font-size: 24px;    
 }
 
 .btn {  
