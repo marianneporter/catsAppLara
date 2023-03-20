@@ -23,8 +23,6 @@
         @endunless
      
     </div>
-
-
-
+    
 </x-layout>
 
