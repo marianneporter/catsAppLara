@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="max-w-lg mx-auto min-h-screen pt-28 px-16 bg-white">
+    <div class="add-edit-container">
 
         <header>
             <h2 class="text-2xl">

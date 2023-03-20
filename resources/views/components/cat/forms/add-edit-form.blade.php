@@ -36,8 +36,8 @@
                                   :content="$cat->fav_food" /> 
 
     <div class="mt-8 flex justify-around">                   
-        <a href={{ route('cats.list') }} class="btn btn-shadow bg-gray-500 text-white md:min-w-[10rem] py-5" >Cancel</a>
-        <button class="btn btn-shadow bg-green-500 text-white md:min-w-[10rem] py-5" type="submit">{{ $mode }} Cat</button>
+        <a href={{ route('cats.list') }} class="btn btn-shadow bg-gray-500 text-white md:min-w-[8rem] py-5" >Cancel</a>
+        <button class="btn btn-shadow bg-green-500 text-white md:min-w-[8rem]  py-5" type="submit">{{ $mode }} Cat</button>
     </div>                           
 </form>
 

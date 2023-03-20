@@ -1,10 +1,13 @@
 <div class="mb-2">
 
     <label class="block" for="{{$name}}">{{$title}}</label>   
-    <input id="{{$datepickerId}}"
-           type="text" name="{{$name}}"
-           class="flatpickr input-element px-2.5" placeholder="Select Date"
-          >
+    
+    <div class="select-and-date-wrapper calendar-icon">
+        <input id="{{$datepickerId}}"
+            type="text" name="{{$name}}"
+            class="flatpickr input-element px-2.5" placeholder="Select Date">        
+    </div>
+
  
     <div class="field-error">
         @error($name)  

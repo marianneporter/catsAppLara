@@ -11,16 +11,10 @@ use App\Http\Requests\CatRequest;
 class CatController extends Controller
 {
 
-     public function index() {
-    //     return view('cats.index', [      
-    //         'cats' => DB::table('cats')  
-    //                   ->orderBy('name', 'asc')   
-    //                   ->paginate(5) 
-    //     ]);
+     public function index() {    
 
-        return view('cats.index', [      
-            //    'listings' => Listing::all()      
-               'cats' => Cat::orderBy('name', 'asc')->paginate(4)
+        return view('cats.index', [              
+               'cats' => Cat::orderBy('name', 'asc')->paginate(8)
         ]);
     }
     

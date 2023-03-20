@@ -1,0 +1,31 @@
+/***************************************************************************/
+/*  inserts icon on form element for select or calendar icon               */
+/***************************************************************************/
+
+.select-and-date-wrapper {
+    position: relative;
+}
+
+.select-and-date-wrapper select {
+    appearance: none;
+}
+
+.select-and-date-wrapper::after {
+    position: absolute;
+    top: 0.9rem;
+    right: 1rem;
+    left: auto;
+    font-size: 0.75rem;
+    pointer-events: none;
+    color: #888888;   
+}
+
+.arrow-icon.select-and-date-wrapper::after {
+    content: "\f0d7";
+    font: var(--fa-font-solid);  
+}
+
+.calendar-icon.select-and-date-wrapper::after {
+    content: "\f073 ";
+    font: var(--fa-font-solid);   
+}
