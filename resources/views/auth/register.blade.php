@@ -37,12 +37,12 @@
                                               mode="Create"                                   
                                               input-type="password"  />    
 
-            <div class="mt-8">                 
-                <button class="btn btn-shadow bg-green-500 text-white 
-                               min-w-full md:min-w-[10rem] py-[1.33rem]"                     
-                        type="submit">Register</button>
-            </div>                           
-      </form>            
+                <div class="mt-8">                 
+                    <button class="btn btn-shadow bg-green-500 text-white 
+                                min-w-full md:min-w-[10rem] py-[1.33rem]"                     
+                            type="submit">Register</button>
+                </div>                           
+            </form>            
             
 
         </main>

@@ -29,11 +29,8 @@
                                    min-w-full md:min-w-[10rem] py-[1.33rem]"                     
                             type="submit">Login</button>
                 </div>                           
-            </form>            
-            
-
+            </form>       
         </main>
-
     </div>
 
 </x-layout>

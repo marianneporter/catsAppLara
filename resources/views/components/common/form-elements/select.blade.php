@@ -3,7 +3,7 @@
     <label class="block" for="{{$name}}">{{$title}}</label>
   
     <div class="select-and-date-wrapper arrow-icon">
-        <select  class="input-element select-element px-2.5 "
+        <select class="input-element select-element px-2.5 "
                  name="{{$name}}" required>   
 
             <option hidden  value="" >Select {{ $title }}</option>  

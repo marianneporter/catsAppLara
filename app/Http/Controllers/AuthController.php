@@ -31,11 +31,12 @@ class AuthController extends Controller
     }
 
     public function login() {
+        // return login form
         return view('auth.login');
     }
 
     public function authenticate(LoginRequest $request) {    
-
+        // check credentials and login if valid 
         $validated=$request->validated();
 
         if(auth()->attempt($validated)) {

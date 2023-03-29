@@ -7,8 +7,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 /* common input element this class is needed on all input elements so that they all look the 
    same and so that the JavaScript CheckForm class can remove error messages when the 
    user adds new input */ 
@@ -46,5 +44,3 @@
 .add-edit-container {
     @apply max-w-md mx-auto min-h-screen pt-28 px-12 bg-white;
 }
-
-
