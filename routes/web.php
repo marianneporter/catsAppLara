@@ -16,10 +16,13 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-
 Route::get('/', [ CatController::class, 'index'] )
                  ->name('cats.list')
                  ->middleware('auth');
+
+Route::get('/about', function () {
+    return view('about');
+});
 
 // create cat get and post
 Route::get('/cats/create', [CatController::class, 'create'])

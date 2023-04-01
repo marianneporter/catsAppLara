@@ -13,8 +13,7 @@
         <ul class="list-none md:flex column-gap-[1.875rem] items-center grow md:pl-6  bg-blue-900">
                                                 
             <li class="nav-li"><a href="/" class="block w-full h-full">Cats List</a></li> 
-            <li class="nav-li"><a href="#" class="block w-full h-full">About</a></li> 
-            <li class="nav-li"><a href="#" class="block w-full h-full">Contact</a></li> 
+            <li class="nav-li"><a href="/about" class="block w-full h-full">About</a></li>           
             
             <li class="block decoration-0 md:mr-4 md:ml-auto " >
                 <div class="md:hidden border-b-2"></div>   

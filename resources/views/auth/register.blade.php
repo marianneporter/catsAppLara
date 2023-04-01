@@ -10,7 +10,7 @@
  
         <main class="mt-6">
             <form method="POST"
-                action={{route('auth.store') }}
+                action={{ route('auth.store') }}
                 autocomplete="off" novalidate >
       
                 @csrf  
