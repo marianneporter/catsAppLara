@@ -19,7 +19,7 @@
            
 
         @else
-            <h3>Sorry! No cats were found
+            <h3>Sorry! No cats were found</h3>
         @endunless
      
     </div>
