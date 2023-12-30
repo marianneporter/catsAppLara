@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 use App\Models\Cat;
 use App\Http\Requests\CatRequest;
@@ -29,9 +30,9 @@ class CatController extends Controller
         Cat::create($validated);
 
         $messageText =  $validated['name'] .' created successfully!';
-        $request->session()->flash("messageData",
-                                   [ 'type' => 'success', 
-                                     'text' => $messageText ]); 
+        Session::flash("messageData",
+                     [ 'type' => 'success', 
+                       'text' => $messageText ]); 
         return redirect('/');  
     }
          
@@ -46,9 +47,9 @@ class CatController extends Controller
         $cat->update($validated); 
    
         $messageText =  $validated['name'] .' updated successfully!';
-        $request->session()->flash("messageData",
-                                   [ 'type' => 'success', 
-                                     'text' => $messageText ]);
+        Session::flash("messageData",
+                       [ 'type' => 'success', 
+                         'text' => $messageText ]);
   
         return redirect('/');
     }
