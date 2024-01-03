@@ -14,32 +14,17 @@
                 autocomplete="off" novalidate >
       
                 @csrf  
-                <div class="mb-2">
-                    <label class="block" for="email">Email</label>
-                    <input type="text" id="email" name="email"
-                            class="input-element px-2.5"   
-                            value="{{old('email')}}"
-                            autocomplete="one-time-code" >  
-                    <div class="field-error">
-                        @error('email')  
-                           <p class="text-red-500 text-xs">{{$message}}</p> 
-                        @enderror
-                    </div>  
-                </div>
- 
-                <div class="mb-2">
-                    <label class="block" for=password">Password</label>
-                    <input type="password" id="password" name="password"
-                            class="input-element px-2.5"     
-                            value="{{old('password')}}"
-                            autocomplete="one-time-code">  
-                    <div class="field-error">
-                        @error('password')  
-                           <p class="text-red-500 text-xs">{{$message}}</p> 
-                        @enderror
-                    </div>  
-                </div> 
 
+                <x-common.form-elements.input name="email"
+                                              title="Email"
+                                              mode="Create"
+                                              auth="true" />  
+                                              
+                <x-common.form-elements.input name="password"
+                                              title="Password"
+                                              mode="Create"                                           
+                                              input-type="password" 
+                                              auth="true" />   
                 <div class="mt-8 ">                 
                     <button class="btn btn-shadow bg-green-500 text-white 
                                    min-w-full md:min-w-[10rem] py-[1.33rem]"                     
