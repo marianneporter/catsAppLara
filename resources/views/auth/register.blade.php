@@ -6,7 +6,7 @@
             <h2 class="text-2xl">
                 Register
             </h2>            
-        </header>
+        </header>                           
  
         <main class="mt-6">
             <form method="POST"
@@ -17,25 +17,30 @@
 
                 <x-common.form-elements.input name="email"
                                               title="Email"
-                                              mode="Create" />                  
+                                              mode="Create"
+                                              auth="true" />                  
 
                 <x-common.form-elements.input name="first_name"
                                               title="First Name"
-                                              mode="Create" />   
+                                              mode="Create"
+                                              auth="true" />   
 
                 <x-common.form-elements.input name="last_name"
                                               title="Last Name"
-                                              mode="Create"  />   
+                                              mode="Create" 
+                                              auth="true" />   
 
                 <x-common.form-elements.input name="password"
                                               title="Password"
                                               mode="Create"                                           
-                                              input-type="password"  />   
+                                              input-type="password" 
+                                              auth="true" />   
 
                 <x-common.form-elements.input name="password_confirmation"
                                               title="Confirm Password"
                                               mode="Create"                                   
-                                              input-type="password"  />    
+                                              input-type="password" 
+                                              auth="true" />    
 
                 <div class="mt-8">                 
                     <button class="btn btn-shadow bg-green-500 text-white 

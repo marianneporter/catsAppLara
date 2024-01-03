@@ -17,16 +17,19 @@ class Input extends Component
      *
      * @return void
      */
-    public function __construct($name, $title, $mode, $content="", $inputType="text")
-    {
-       
+    public function __construct($name,
+                                $title,
+                                $mode,
+                                $content="",
+                                $inputType="text"
+                                $auth="false")
+    {        
         $this->name  = $name;
         $this->title = $title;
         $this->mode  = $mode;
         $this->content  = $content;
         $this->inputType = $inputType;
-
-
+        $this->auth = $auth;
     }
 
     /**
