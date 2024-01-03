@@ -11,6 +11,7 @@ class Input extends Component
     public $mode; 
     public $content;
     public $inputType;
+    public $auth;
 
     /**
      * Create a new component instance.
@@ -21,7 +22,7 @@ class Input extends Component
                                 $title,
                                 $mode,
                                 $content="",
-                                $inputType="text"
+                                $inputType="text",
                                 $auth="false")
     {        
         $this->name  = $name;
