@@ -14,15 +14,31 @@
                 autocomplete="off" novalidate >
       
                 @csrf  
-
-                <x-common.form-elements.input name="email"
-                                              title="Email"
-                                              mode="Create" />   
-
-                <x-common.form-elements.input name="password"
-                                              title="Password"
-                                              mode="Create"                                           
-                                              input-type="password"  />   
+                <div class="mb-2">
+                    <label class="block" for="email">Email</label>
+                    <input type="text" id="email" name="email"
+                            class="input-element px-2.5"   
+                            value="{{old('email')}}"
+                            autocomplete="one-time-code" >  
+                    <div class="field-error">
+                        @error('email')  
+                           <p class="text-red-500 text-xs">{{$message}}</p> 
+                        @enderror
+                    </div>  
+                </div>
+ 
+                <div class="mb-2">
+                    <label class="block" for=password">Password</label>
+                    <input type="password" id="password" name="password"
+                            class="input-element px-2.5"     
+                            value="{{old('password')}}"
+                            autocomplete="one-time-code">  
+                    <div class="field-error">
+                        @error('password')  
+                           <p class="text-red-500 text-xs">{{$message}}</p> 
+                        @enderror
+                    </div>  
+                </div> 
 
                 <div class="mt-8 ">                 
                     <button class="btn btn-shadow bg-green-500 text-white 
