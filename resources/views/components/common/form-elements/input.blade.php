@@ -11,7 +11,7 @@
             autocomplete="one-time-code"           
         @endif >                      
         @error($name)  
-           <p class="text-r                  ed-500 text-xs">{{$message}}</p> 
+           <p class="text-red-500 text-xs">{{$message}}</p> 
         @enderror
     </div>                                                                                                    
 </div>
