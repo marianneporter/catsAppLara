@@ -7,9 +7,7 @@
         @else
             value = "{{ old($name, $content) }}"
         @endif 
-        @if ($auth == 'true')
-            autocomplete="one-time-code"           
-        @endif />  
+        autocomplete="{{$autocomplete}}" />
     <div class="field-error">                    
         @error($name)  
            <p class="text-red-500 text-xs">{{$message}}</p> 

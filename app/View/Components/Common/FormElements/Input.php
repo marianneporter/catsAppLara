@@ -11,7 +11,7 @@ class Input extends Component
     public $mode; 
     public $content;
     public $inputType;
-    public $auth;
+    public $autocomplete;
 
     /**
      * Create a new component instance.
@@ -30,7 +30,15 @@ class Input extends Component
         $this->mode  = $mode;
         $this->content  = $content;
         $this->inputType = $inputType;
-        $this->auth = $auth;
+        if ($auth == "true") {
+            if ($inputType == 'password') {
+                $this->autocomplete = "new-password";
+            } else {
+                $this->autocomplete = "one-time-code";
+            }
+        } else {
+            $this->autocomplete = "on";
+        }
     }
 
     /**
