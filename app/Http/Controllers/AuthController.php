@@ -18,9 +18,9 @@ class AuthController extends Controller
     public function store(RegisterRequest $request) {
         //create the user
         $validated=$request->validated();
-
-        User::create($validated);
-
+        $user = User::create($validated);
+        
+        auth()->login($user);
         $messageText =  'Welcome ' . $validated['first_name'] .', you have registered successfully';
         $request->session()->flash("messageData",
                                    [ 'type' => 'success', 
