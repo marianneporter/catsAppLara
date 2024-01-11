@@ -22,7 +22,7 @@ class AuthController extends Controller
         
         auth()->login($user);
         $messageText =  'Welcome ' . $validated['first_name'] .', you have registered successfully';
-        $request->session()->flash("messageData",
+        session()->flash("messageData",
                                    [ 'type' => 'success', 
                                      'text' => $messageText ]);        
 
@@ -42,7 +42,7 @@ class AuthController extends Controller
         if(auth()->attempt($validated)) {
             session()->regenerate();
             $messageText =  'Welcome ' .  auth()->user()->first_name .', you have logged in successfully';
-            $request->session()->flash("messageData",
+            session()->flash("messageData",
                                        [ 'type' => 'success', 
                                          'text' => $messageText ]);  
 
@@ -59,7 +59,7 @@ class AuthController extends Controller
         auth()->logout();
 
         $messageText =  'Thank you for logging out. See you soon!';
-        $request->session()->flash("messageData",
+        session()->flash("messageData",
                                    [ 'type' => 'success', 
                                      'text' => $messageText ]);  
 
